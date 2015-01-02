@@ -60,7 +60,7 @@ png_row_callback(png_structp png_ptr,
                  png_uint_32 row,
                  int         pass)
 {
-  fputc('.', stderr);
+  fprintf(stderr, "\x1b[2;0H%3d%%\n", row*100 / 480);
 }
 #endif
 
@@ -262,7 +262,7 @@ screenshot_png(const char *path,
   png_destroy_write_struct(&png_ptr, &info_ptr);
   fclose(fp);
 
-  printf("\x1b[2;0Hdone\n");
+  fprintf(stderr, "\x1b[2;0H    \n");
 
   return 0;
 }

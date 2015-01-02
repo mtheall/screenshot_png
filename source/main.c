@@ -145,7 +145,6 @@ int main(int argc, char *argv[])
 
     if(down & KEY_A)
     {
-      printf("\x1b[2;0Hbusy\n");
       update_gfx();
       screenshot_png(path, level);
     }
