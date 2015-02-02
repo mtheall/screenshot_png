@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
   fsInit();
   sdmcInit();
   hidInit(NULL);
-  gfxInit();
+  gfxInit(GSP_BGR8_OES, GSP_RGBA8_OES, 0);
   gfxSet3D(false);
 
   consoleInit(GFX_TOP, NULL);
