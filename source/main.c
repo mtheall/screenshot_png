@@ -11,7 +11,7 @@
 
 static const struct
 {
-  GSP_FramebufferFormats format;
+  GSPGPU_FramebufferFormats format;
   u32                    bytes_per_pixel;
   const char             *str;
 } formats[] =
