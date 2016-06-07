@@ -68,7 +68,7 @@ static u8 png_buffer[400*480*4];
 static u8 *png_lines[480];
 
 static u32
-bytes_per_pixel(GSP_FramebufferFormats format)
+bytes_per_pixel(GSPGPU_FramebufferFormats  format)
 {
   switch(format)
   {
@@ -88,7 +88,7 @@ bytes_per_pixel(GSP_FramebufferFormats format)
 static void
 pixel_to_rgba(u8                     *dst,
               const u8               *src,
-              GSP_FramebufferFormats format)
+              GSPGPU_FramebufferFormats  format)
 {
   u16 half;
 
@@ -154,8 +154,8 @@ fill_png_buffer(void)
   u8     *p = png_buffer;
   u16    fbWidth, fbHeight;
   u8     *fb = gfxGetFramebuffer(GFX_TOP, GFX_LEFT, &fbWidth, &fbHeight);
-  GSP_FramebufferFormats topFmt = gfxGetScreenFormat(GFX_TOP);
-  GSP_FramebufferFormats botFmt = gfxGetScreenFormat(GFX_BOTTOM);
+  GSPGPU_FramebufferFormats  topFmt = gfxGetScreenFormat(GFX_TOP);
+  GSPGPU_FramebufferFormats  botFmt = gfxGetScreenFormat(GFX_BOTTOM);
   u32    topBPP = bytes_per_pixel(topFmt);
   u32    botBPP = bytes_per_pixel(botFmt);
 

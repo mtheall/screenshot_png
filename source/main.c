@@ -11,7 +11,7 @@
 
 static const struct
 {
-  GSP_FramebufferFormats format;
+  GSPGPU_FramebufferFormats format;
   u32                    bytes_per_pixel;
   const char             *str;
 } formats[] =
@@ -35,7 +35,7 @@ update_gfx(void)
 static void
 rgb_to_pixel(u8                     *dst,
              const u8               *src,
-             GSP_FramebufferFormats format)
+             GSPGPU_FramebufferFormats format)
 {
   u16 half;
 
@@ -81,7 +81,7 @@ rgb_to_pixel(u8                     *dst,
 
 static void
 fill_screen(gfxScreen_t            screen,
-            GSP_FramebufferFormats format)
+            GSPGPU_FramebufferFormats format)
 {
   u16 x, y;
   u16 fbWidth, fbHeight;
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
   unsigned int format_choice = 0;
   unsigned int down;
   int          level = Z_NO_COMPRESSION;
-  GSP_FramebufferFormats format = GSP_RGBA8_OES;
+  GSPGPU_FramebufferFormats format = GSP_RGBA8_OES;
   static char  path[32];
 
   srvInit();
